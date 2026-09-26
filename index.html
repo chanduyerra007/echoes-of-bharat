@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Playable history games from Echoes of Bharat.">
+  <title>Heritage Arcade | Echoes of Bharat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="arcade.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="arcade-header">
+    <a class="back-link" href="../index.html">← ECHOES OF BHARAT</a>
+    <p class="brand">✦ HERITAGE ARCADE</p>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">🔊 SOUND</button>
+  </header>
+
+  <main class="arcade-shell">
+    <section class="arcade-hero" aria-labelledby="arcadeTitle">
+      <p class="eyebrow">PLAY · LEARN · REMEMBER</p>
+      <h1 id="arcadeTitle">History is a world<br><em>you can play in.</em></h1>
+      <p>Build a thriving city, place moments in time, and uncover heritage pairs. Each game turns a small piece of Indian history into an active challenge.</p>
+      <div class="arcade-stats" aria-label="Game statistics"><div><strong id="gamesWon">0</strong><span>games mastered</span></div><div><strong>4</strong><span>playable games</span></div><div><strong>∞</strong><span>curious discoveries</span></div></div>
+    </section>
+
+    <nav class="game-picker" aria-label="Choose a game">
+      <button class="picker-card trail-picker" type="button" data-game="trail"><span>🗺️</span><strong>Heritage Trail</strong><small>2D adventure · collect &amp; explore</small></button>
+      <button class="picker-card active" type="button" data-game="builder"><span>🏛️</span><strong>City Builder</strong><small>Hampi-inspired strategy</small></button>
+      <button class="picker-card" type="button" data-game="timeline"><span>⏳</span><strong>Timeline Trail</strong><small>Put history in order</small></button>
+      <button class="picker-card" type="button" data-game="memory"><span>🧿</span><strong>Monument Match</strong><small>Find heritage pairs</small></button>
+    </nav>
+
+    <section class="game-panel" id="trailGame" data-panel="trail" aria-labelledby="trailTitle">
+      <div class="game-heading"><div><p class="eyebrow">GAME 01 · 2D EXPLORATION</p><h2 id="trailTitle">Run the <em>Heritage Trail</em></h2><p>Travel through three illustrated landscapes. Move, jump over broken paths, gather Memory Sparks, and reach each landmark. No questions—just exploration.</p></div><button class="restart-btn" type="button" id="trailRestart">↻ RESTART TRAIL</button></div>
+      <div class="trail-hud" aria-label="Heritage Trail game status"><span>LOCATION <strong id="trailLocation">HAMPI BAZAAR</strong></span><span>SPARKS <strong id="trailSparks">0 / 6</strong></span><span>HEARTS <strong id="trailHearts">♥♥♥</strong></span><span>SCORE <strong id="trailScore">000</strong></span></div>
+      <div class="trail-stage">
+        <canvas id="trailCanvas" width="960" height="540" aria-label="Heritage Trail 2D game. Use left and right arrows to move, and space to jump.">Your browser needs canvas support to play this game.</canvas>
+        <div class="trail-intro" id="trailIntro"><p class="eyebrow">YOUR MISSION</p><h3>Bring the story home.</h3><p>Find the glowing Memory Sparks before reaching the landmark. Use <b>← →</b> or <b>A D</b> to move and <b>SPACE</b> to jump.</p><button class="primary-btn" id="trailStart" type="button">BEGIN THE TRAIL →</button></div>
+      </div>
+      <div class="touch-controls" aria-label="Touch controls for Heritage Trail"><button type="button" data-trail-control="left" aria-label="Move left">←</button><button type="button" data-trail-control="jump" aria-label="Jump">JUMP</button><button type="button" data-trail-control="right" aria-label="Move right">→</button></div>
+      <div class="trail-message game-feedback" id="trailMessage" aria-live="polite">The trail begins at Hampi. Gather every spark to restore the monument's memory.</div>
+      <div class="trail-view" aria-label="Three dimensional heritage landmark view"><div class="view-copy"><p class="eyebrow">3D-STYLE LANDMARK VIEW</p><h3 id="viewTitle">Hampi's stone skyline</h3><p id="viewText">The game world uses layered depth and a rotating monument silhouette. Each completed trail changes this view.</p></div><div class="monument-model" id="monumentModel" aria-hidden="true"><i></i><b></b><span></span></div></div>
+    </section>
+
+    <section class="game-panel active" id="builderGame" data-panel="builder" aria-labelledby="builderTitle">
+      <div class="game-heading"><div><p class="eyebrow">GAME 02 · STRATEGY</p><h2 id="builderTitle">Build the <em>Vijayanagara city</em></h2><p>Balance resources to create a resilient city. Build all four landmarks in the right order.</p></div><button class="restart-btn" type="button" data-restart="builder">↻ RESTART</button></div>
+      <div class="resource-bar" aria-label="City resources"><div><span>🌾</span><strong id="foodValue">5</strong><small>grain</small></div><div><span>💧</span><strong id="waterValue">5</strong><small>water</small></div><div><span>🪔</span><strong id="cultureValue">2</strong><small>culture</small></div><div><span>✦</span><strong id="prosperityValue">0</strong><small>prosperity</small></div></div>
+      <p class="mission" id="builderMission">Mission: raise a city that can feed, support, create, and celebrate with its people.</p>
+      <div class="build-grid" id="buildGrid"></div>
+      <div class="game-feedback" id="builderFeedback" aria-live="polite">Start with a reservoir: water helps every community thrive.</div>
+    </section>
+
+    <section class="game-panel" id="timelineGame" data-panel="timeline" aria-labelledby="timelineTitle">
+      <div class="game-heading"><div><p class="eyebrow">GAME 03 · CHRONOLOGY</p><h2 id="timelineTitle">Walk the <em>Timeline Trail</em></h2><p>Choose the events in the order you think they happened, then test your historical instinct.</p></div><button class="restart-btn" type="button" data-restart="timeline">↻ NEW TRAIL</button></div>
+      <div class="timeline-layout"><div><p class="instruction">Tap an event to place it on your trail.</p><div class="event-bank" id="eventBank"></div></div><div><p class="instruction">Your trail <span id="timelineCount">0 / 5</span></p><ol class="answer-trail" id="answerTrail"><li class="trail-placeholder">Your selected events will appear here.</li></ol><div class="timeline-actions"><button class="subtle-btn" id="undoTimeline" type="button">UNDO LAST</button><button class="primary-btn" id="checkTimeline" type="button">CHECK TIMELINE →</button></div></div></div>
+      <div class="game-feedback" id="timelineFeedback" aria-live="polite">Look for broad eras first: ancient cities come before empires and monuments.</div>
+    </section>
+
+    <section class="game-panel" id="memoryGame" data-panel="memory" aria-labelledby="memoryTitle">
+      <div class="game-heading"><div><p class="eyebrow">GAME 04 · MEMORY</p><h2 id="memoryTitle">Monument <em>Match</em></h2><p>Reveal the pairs. Each symbol leads back to a place, practice, or architectural idea worth remembering.</p></div><button class="restart-btn" type="button" data-restart="memory">↻ SHUFFLE</button></div>
+      <div class="memory-status"><span>Moves <strong id="moveCount">0</strong></span><span>Pairs <strong id="pairCount">0 / 6</strong></span><span>Best <strong id="bestMoves">—</strong></span></div>
+      <div class="memory-grid" id="memoryGrid" aria-label="Memory card game"></div>
+      <div class="game-feedback" id="memoryFeedback" aria-live="polite">Find the matching heritage symbols with as few moves as you can.</div>
+    </section>
+
+    <section class="learn-links" aria-label="More Echoes of Bharat adventures">
+      <div><p class="eyebrow">KEEP EXPLORING</p><h2>More ways into the story</h2></div>
+      <a href="../journey.html">🗺️ Journey Through Time <span>→</span></a>
+      <a href="../index.html#route">🧭 Heritage Route Map <span>→</span></a>
+      <a href="../hampi.html">🏛️ Explore Hampi <span>→</span></a>
+    </section>
+  </main>
+
+  <script src="arcade.js"></script>
+</body>
+</html>

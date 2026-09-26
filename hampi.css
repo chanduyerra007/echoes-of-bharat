@@ -1,0 +1,1013 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #07090d;
+    color: #f4ead5;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.hampi-navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(5, 7, 10, .85);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(229,170,59,.15);
+
+    z-index: 1000;
+}
+
+.hampi-logo {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hampi-logo > span {
+
+    color: #e5aa3b;
+
+    font-size: 35px;
+
+    animation: rotate 15s linear infinite;
+}
+
+.hampi-logo h2 {
+
+    color: #e5aa3b;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 17px;
+}
+
+.hampi-logo p {
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.hampi-navbar nav {
+
+    display: flex;
+    gap: 30px;
+}
+
+.hampi-navbar nav a {
+
+    color: #bbb;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.hampi-navbar nav a:hover {
+
+    color: #e5aa3b;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hampi-hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(4,6,9,.45),
+            rgba(4,6,9,.93)
+        ),
+
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Hampi_stone_chariot.jpg?width=2000");
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hampi-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            transparent 15%,
+            rgba(0,0,0,.8)
+        );
+}
+
+.hero-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(229,170,59,.08);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    animation: pulseGlow 5s infinite alternate;
+}
+
+.hampi-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    padding: 100px 20px;
+
+    animation: heroIn 1.4s ease;
+}
+
+.hampi-label {
+
+    color: #e5aa3b;
+
+    letter-spacing: 7px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+.hampi-hero h1 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(75px, 15vw, 170px);
+
+    letter-spacing: 15px;
+
+    color: #f1c45d;
+
+    text-shadow:
+        0 0 30px rgba(229,170,59,.25),
+        0 5px 10px #000;
+}
+
+.hero-divider {
+
+    width: 100px;
+    height: 2px;
+
+    background: #e5aa3b;
+
+    margin: 25px auto;
+}
+
+.hampi-hero h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(22px, 4vw, 38px);
+
+    color: #eee0c0;
+}
+
+.hampi-hero-content > p:last-of-type {
+
+    max-width: 680px;
+
+    margin: 25px auto;
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* BUTTON */
+
+.gold-button {
+
+    display: inline-flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 15px 27px;
+
+    color: #15110a;
+
+    background: #e5aa3b;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+.gold-button:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(229,170,59,.25);
+}
+
+.scroll-text {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.hampi-intro {
+
+    padding: 110px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080b10,
+            #11151c
+        );
+}
+
+.hampi-heading {
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.hampi-heading > p {
+
+    color: #e5aa3b;
+
+    letter-spacing: 4px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.hampi-heading h2 {
+
+    margin-top: 12px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(32px,5vw,52px);
+
+    color: #efdfbd;
+}
+
+.hampi-heading > div {
+
+    width: 70px;
+
+    height: 2px;
+
+    background: #e5aa3b;
+
+    margin: 20px auto;
+}
+
+.hampi-heading article {
+
+    color: #9298a1;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+}
+
+
+/* STATS */
+
+.hampi-stats {
+
+    max-width: 850px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top: 1px solid rgba(229,170,59,.15);
+
+    border-bottom: 1px solid rgba(229,170,59,.15);
+}
+
+.hampi-stats div {
+
+    padding: 30px 15px;
+
+    border-right:
+        1px solid rgba(229,170,59,.15);
+}
+
+.hampi-stats div:last-child {
+
+    border-right: none;
+}
+
+.hampi-stats strong {
+
+    display: block;
+
+    font-family: "Cinzel", serif;
+
+    color: #e5aa3b;
+
+    font-size: 22px;
+}
+
+.hampi-stats span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* ================================
+   MONUMENTS
+================================ */
+
+.hampi-monuments {
+
+    padding: 110px 6%;
+
+    background: #0c1118;
+}
+
+.hampi-card-grid {
+
+    max-width: 1250px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.hampi-card {
+
+    background: #111923;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    overflow: hidden;
+
+    transition: .45s;
+
+    position: relative;
+}
+
+.hampi-card:hover {
+
+    transform: translateY(-12px);
+
+    border-color: rgba(229,170,59,.55);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+}
+
+.hampi-card-image {
+
+    height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hampi-card-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .6s;
+}
+
+.hampi-card:hover img {
+
+    transform: scale(1.1);
+}
+
+.hampi-card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(0,0,0,.8)
+        );
+}
+
+.hampi-card-image span {
+
+    position: absolute;
+
+    left: 14px;
+    top: 14px;
+
+    z-index: 2;
+
+    padding: 6px 9px;
+
+    color: #f1c45d;
+
+    background: rgba(5,7,10,.8);
+
+    border: 1px solid #e5aa3b;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.hampi-card-content {
+
+    padding: 25px;
+}
+
+.hampi-card-content > p {
+
+    color: #e5aa3b;
+
+    letter-spacing: 2px;
+
+    font-size: 8px;
+}
+
+.hampi-card-content h3 {
+
+    margin: 9px 0;
+
+    font-family: "Cinzel", serif;
+
+    color: #ead9b5;
+
+    font-size: 22px;
+}
+
+.hampi-card-content article {
+
+    color: #888f99;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    min-height: 60px;
+}
+
+.hampi-card-content button {
+
+    margin-top: 20px;
+
+    background: none;
+
+    border: none;
+
+    color: #e5aa3b;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.hampi-card-content button:hover {
+
+    transform: translateX(6px);
+
+    color: white;
+}
+
+
+/* ================================
+   VIRTUAL EXPERIENCE
+================================ */
+
+.virtual-section {
+
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(4,6,9,.75),
+            rgba(4,6,9,.93)
+        ),
+
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Hampi_stone_chariot.jpg?width=2000");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+.virtual-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 40px;
+}
+
+.virtual-content > p {
+
+    color: #e5aa3b;
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+}
+
+.virtual-content h2 {
+
+    margin-top: 15px;
+
+    font-family: "Cinzel", serif;
+
+    color: #eee0c0;
+
+    font-size: clamp(38px,6vw,70px);
+}
+
+.virtual-content h2 span {
+
+    color: #e5aa3b;
+}
+
+.virtual-content h3 {
+
+    font-family: "Cinzel", serif;
+
+    color: #aaa;
+
+    font-size: 28px;
+}
+
+.virtual-line {
+
+    width: 70px;
+    height: 2px;
+
+    background: #e5aa3b;
+
+    margin: 25px auto;
+}
+
+.virtual-content article {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+.virtual-content button {
+
+    margin-top: 30px;
+
+    padding: 16px 28px;
+
+    border: 1px solid #e5aa3b;
+
+    background: #e5aa3b;
+
+    color: #111;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.virtual-content button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 15px 40px rgba(229,170,59,.3);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.hampi-footer {
+
+    padding: 60px 20px 30px;
+
+    text-align: center;
+
+    background: #05070a;
+}
+
+.hampi-footer h2 {
+
+    color: #e5aa3b;
+
+    font-family: "Cinzel", serif;
+}
+
+.hampi-footer p {
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin: 10px;
+}
+
+.hampi-footer a {
+
+    color: #e5aa3b;
+
+    text-decoration: none;
+
+    font-size: 10px;
+}
+
+.hampi-footer div {
+
+    margin-top: 30px;
+
+    color: #444;
+
+    font-size: 9px;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.hampi-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0,0,0,.85);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 3000;
+
+    padding: 20px;
+}
+
+.hampi-modal.active {
+
+    display: flex;
+}
+
+.hampi-modal-box {
+
+    position: relative;
+
+    max-width: 600px;
+
+    width: 100%;
+
+    padding: 45px;
+
+    background: #101722;
+
+    border: 1px solid #e5aa3b;
+
+    animation: modalIn .4s ease;
+}
+
+.hampi-modal-box > p {
+
+    color: #e5aa3b;
+
+    letter-spacing: 4px;
+
+    font-size: 9px;
+}
+
+.hampi-modal-box h2 {
+
+    margin-top: 10px;
+
+    font-family: "Cinzel", serif;
+
+    color: #f0d79f;
+
+    font-size: 32px;
+}
+
+.hampi-modal-box > div {
+
+    width: 60px;
+
+    height: 2px;
+
+    background: #e5aa3b;
+
+    margin: 20px 0;
+}
+
+.hampi-modal-box article {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 13px;
+}
+
+.hampi-modal-box button:last-child {
+
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    background: transparent;
+
+    border: 1px solid #e5aa3b;
+
+    color: #e5aa3b;
+
+    cursor: pointer;
+}
+
+.hampi-close {
+
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    border: none;
+
+    background: none;
+
+    color: #aaa;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.hampi-close:hover {
+
+    color: #e5aa3b;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+
+    from {
+        transform: scale(.8);
+        opacity: .4;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media(max-width:900px) {
+
+    .hampi-navbar nav {
+        display: none;
+    }
+
+    .hampi-card-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .hampi-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hampi-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hampi-stats div {
+        border-right: none;
+        border-bottom: 1px solid rgba(229,170,59,.15);
+    }
+
+    .hampi-hero h1 {
+        letter-spacing: 7px;
+    }
+
+    .hampi-modal-box {
+        padding: 30px 22px;
+    }
+
+}
+.play-hampi-btn {
+    display: inline-block;
+    padding: 16px 35px;
+    margin-top: 20px;
+
+    background: #d9a441;
+    color: #080b10;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    border: 1px solid #d9a441;
+
+    transition: all 0.3s ease;
+}
+
+.play-hampi-btn:hover {
+    background: transparent;
+    color: #d9a441;
+    transform: translateY(-3px);
+}
