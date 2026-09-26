@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journey Through Time | Echoes of Bharat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="journey.css">
+  <link rel="stylesheet" href="journey-satellite.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main class="journey-shell">
+    <header class="journey-header">
+      <a class="back-link" href="index.html">← ECHOES OF BHARAT</a>
+      <div class="header-title"><span>✦</span> JOURNEY THROUGH TIME</div>
+      <div class="header-actions"><button class="map-btn" id="openMap" type="button">⌖ HERITAGE MAP</button><button class="reset-btn" id="resetJourney" type="button">↻ START OVER</button></div>
+    </header>
+
+    <section id="welcomeScreen" class="screen welcome-screen">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <p class="eyebrow">AN INTERACTIVE HISTORY ADVENTURE</p>
+      <h1>India's past is<br><em>waiting for you.</em></h1>
+      <p class="intro">Step through four remarkable eras. Observe, think, and choose wisely—every era leaves a mark on your Time Traveller record.</p>
+      <div class="stat-row">
+        <div><strong>4</strong><span>historical eras</span></div>
+        <div><strong>4</strong><span>decisions to make</span></div>
+        <div><strong>∞</strong><span>stories to discover</span></div>
+      </div>
+      <button class="primary-btn pulse" id="beginJourney" type="button">OPEN THE TIME PORTAL <span>→</span></button>
+      <p class="tip">Best experienced with curiosity.</p>
+    </section>
+
+    <section id="timelineScreen" class="screen timeline-screen hidden">
+      <div class="timeline-intro"><p class="eyebrow">CHOOSE AN ERA</p><h2>Where will you arrive?</h2><p>Your next stop is unlocked by completing the era before it.</p></div>
+      <div id="eraGrid" class="era-grid"></div>
+    </section>
+
+    <section id="storyScreen" class="screen story-screen hidden">
+      <div class="story-top"><button class="text-btn" id="backToTimeline" type="button">← TIMELINE</button><div id="progressText">ERA 1 OF 4</div></div>
+      <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+      <article id="storyCard" class="story-card"></article>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen hidden">
+      <div class="result-medallion">✦</div>
+      <p class="eyebrow">JOURNEY COMPLETE</p>
+      <h2>Time Traveller<br><em>of Bharat</em></h2>
+      <p id="resultMessage" class="result-message"></p>
+      <div id="memoryList" class="memory-list"></div>
+      <button class="primary-btn" id="travelAgain" type="button">TRAVEL AGAIN <span>↻</span></button>
+    </section>
+    <section id="mapScreen" class="screen map-screen hidden">
+      <div class="map-heading"><div><p class="eyebrow">EXPLORE THE SUBCONTINENT</p><h2>India's live <em>satellite map</em></h2><p>Open current satellite imagery in Google Maps, then choose a heritage stop for its exact location and story.</p></div><button class="text-btn" id="mapBack" type="button">← BACK TO JOURNEY</button></div>
+      <div class="map-layout"><div id="heritageMap" aria-label="Interactive map of historical places in India"></div><aside id="placePanel" class="place-panel"><div class="place-symbol">⌖</div><p class="eyebrow">SELECT A PLACE</p><h3>Every marker holds a story.</h3><p>Explore the map to find the cities, monuments, and sites that shaped India's history.</p></aside></div>
+      <div id="placeChips" class="place-chips"></div>
+    </section>
+  </main>
+  <script src="journey.js"></script>
+</body>
+</html>

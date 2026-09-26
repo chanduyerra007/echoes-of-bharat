@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Echoes of Bharat | Explore India's Heritage</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="route-map.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-symbol">☸</span>
+
+            <div>
+                <h2>Echoes of Bharat</h2>
+                <p>History • Culture • Discovery</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#heritage">Heritage</a>
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-game-btn" onclick="goToGames()">
+            PLAY GAMES
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section id="home" class="hero">
+
+        <!-- Decorative stars -->
+        <div class="stars"></div>
+
+        <div class="hero-content">
+
+            <div class="chakra">☸</div>
+
+            <p class="small-title">
+                A JOURNEY THROUGH TIME
+            </p>
+
+            <h1>
+                ECHOES
+                <span>OF BHARAT</span>
+            </h1>
+
+            <p class="hero-description">
+                Walk through centuries of Indian history,
+                discover magnificent monuments, and experience
+                the stories that shaped Bharat.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="scrollToHeritage()">
+                    EXPLORE HERITAGE
+                    <span>→</span>
+                </button>
+
+                <button class="secondary-btn" onclick="goToGames()">
+                    PLAY HISTORICAL GAMES
+                    <span>🎮</span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span></span>
+            SCROLL TO EXPLORE
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="intro">
+
+        <div class="section-heading">
+
+            <p class="gold-label">
+                DISCOVER THE PAST
+            </p>
+
+            <h2>
+                Where History Comes Alive
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Bharat is a land where every stone has a story.
+                Explore legendary monuments, learn about ancient
+                civilizations and experience history through
+                interactive games.
+            </p>
+
+        </div>
+
+        <div class="intro-stats">
+
+            <div class="stat">
+                <h3>5000+</h3>
+                <p>Years of History</p>
+            </div>
+
+            <div class="stat">
+                <h3>100+</h3>
+                <p>Heritage Sites</p>
+            </div>
+
+            <div class="stat">
+                <h3>∞</h3>
+                <p>Stories to Discover</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HERITAGE SECTION
+    ====================================================== -->
+
+    <section id="heritage" class="heritage-section">
+
+        <div class="section-heading">
+
+            <p class="gold-label">
+                EXPLORE BHARAT
+            </p>
+
+            <h2>
+                Monuments of Our Heritage
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Discover the architectural wonders that preserve
+                the memories of India's glorious past.
+            </p>
+
+        </div>
+
+
+        <!-- Heritage Passport: turns browsing into a collection adventure -->
+        <section class="passport-panel" aria-label="Heritage Passport">
+            <div class="passport-copy">
+                <p class="gold-label">YOUR LIVING COLLECTION</p>
+                <h3>Heritage <span>Passport</span></h3>
+                <p>Every place has a story. Open a monument, complete its tiny Time Compass mission, and collect its stamp.</p>
+            </div>
+            <div class="passport-progress-wrap">
+                <div class="passport-count"><strong id="passportCount">0</strong><span>/ 8 STAMPS</span></div>
+                <div class="passport-track"><div id="passportFill" class="passport-fill"></div></div>
+                <p id="passportStatus">Your first journey is waiting.</p>
+            </div>
+            <button class="passport-map-btn" onclick="window.location.href='journey.html#map'">OPEN FULL ROUTE MAP <span>→</span></button>
+        </section>
+
+        <section id="route" class="route-map-home" aria-labelledby="routeMapTitle">
+            <div class="route-map-heading">
+                <p class="gold-label">YOUR INTERACTIVE ROUTE MAP</p>
+                <h2 id="routeMapTitle">Follow the <em>Heritage Loop</em></h2>
+                <p>Choose a glowing stop to preview its story, then enter its immersive monument page. This route turns your website into a connected journey instead of separate facts.</p>
+            </div>
+            <div class="route-map-board">
+                <div class="route-track" aria-label="Heritage route stops">
+                    <button class="route-stop active" type="button" data-title="Taj Mahal" data-href="monuments/taj-mahal.html" data-story="Begin in Agra, where marble, gardens and water create a monument of craftsmanship and memory."><span>✦</span><strong>TAJ MAHAL</strong><small>AGRA</small></button>
+                    <button class="route-stop" type="button" data-title="Konark Sun Temple" data-href="monuments/konark.html" data-story="Travel east to a temple imagined as Surya’s moving stone chariot."><span>☀</span><strong>KONARK</strong><small>ODISHA</small></button>
+                    <button class="route-stop" type="button" data-title="Jagannath Temple" data-href="monuments/jagannath.html" data-story="Discover Puri’s living heritage through tradition, community and respectful learning."><span>✺</span><strong>JAGANNATH</strong><small>PURI</small></button>
+                    <button class="route-stop" type="button" data-title="Sanchi Stupa" data-href="monuments/sanchi.html" data-story="Walk a hilltop path through ancient Buddhist architecture and storytelling gateways."><span>☸</span><strong>SANCHI</strong><small>MADHYA PRADESH</small></button>
+                    <button class="route-stop" type="button" data-title="Ajanta Caves" data-href="monuments/ajanta.html" data-story="Enter painted, rock-cut spaces that hold centuries of artistic imagination."><span>◒</span><strong>AJANTA</strong><small>MAHARASHTRA</small></button>
+                    <button class="route-stop" type="button" data-title="Red Fort" data-href="monuments/red-fort.html" data-story="See the fort as an imperial city of gates, gardens, audience halls and water."><span>⌂</span><strong>RED FORT</strong><small>DELHI</small></button>
+                    <button class="route-stop" type="button" data-title="Charminar" data-href="monuments/charminar.html" data-story="Reach Hyderabad’s four-minaret crossroads, still woven into city life and markets."><span>✧</span><strong>CHARMINAR</strong><small>HYDERABAD</small></button>
+                    <button class="route-stop" type="button" data-title="Hampi" data-href="hampi.html" data-story="Finish among the monumental cityscape of Vijayanagara, then play the Hampi City Builder."><span>♜</span><strong>HAMPI</strong><small>KARNATAKA</small></button>
+                </div>
+                <aside class="route-panel" aria-live="polite"><p class="route-kicker">ROUTE STOP 01 / 08</p><h3 id="routePanelTitle">Taj Mahal</h3><p id="routePanelText">Begin in Agra, where marble, gardens and water create a monument of craftsmanship and memory.</p><a id="routePanelLink" href="monuments/taj-mahal.html">EXPLORE TAJ MAHAL →</a></aside>
+            </div>
+            <div class="route-map-actions"><a href="journey.html#map">OPEN FULL INDIA MAP →</a><a href="arcade/index.html#trail">PLAY THE 2D HERITAGE TRAIL →</a></div>
+        </section>
+
+        <!-- Search bar -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="monumentSearch"
+                placeholder="Search monuments..."
+                onkeyup="searchMonuments()"
+            >
+
+            <span>⌕</span>
+
+        </div>
+
+
+        <!-- Monument cards -->
+
+        <div class="monument-grid" id="monumentGrid">
+
+
+            <!-- =================================================
+                 TAJ MAHAL
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="taj mahal agra mughal"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Taj_Mahal.jpg?width=1200"
+                        alt="Taj Mahal"
+                    >
+
+                    <div class="era">
+                        MUGHAL ERA
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        AGRA, UTTAR PRADESH
+                    </p>
+
+                    <h3>
+                        Taj Mahal
+                    </h3>
+
+                    <p>
+                        An iconic symbol of love and one of the
+                        world's most celebrated architectural
+                        masterpieces.
+                    </p>
+
+                    <a href="monuments/taj-mahal.html" class="learn-btn" onclick="collectStamp('Taj Mahal')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 KONARK SUN TEMPLE
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="konark sun temple odisha"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sun_Temple_at_Konark.jpg?width=1200"
+                        alt="Konark Sun Temple"
+                    >
+
+                    <div class="era">
+                        13TH CENTURY
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        KONARK, ODISHA
+                    </p>
+
+                    <h3>
+                        Sun Temple
+                    </h3>
+
+                    <p>
+                        A remarkable temple designed in the form
+                        of the magnificent chariot of the Sun God.
+                    </p>
+
+                    <a href="monuments/konark.html" class="learn-btn" onclick="collectStamp('Konark Sun Temple')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 JAGANNATH TEMPLE
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="jagannath puri temple odisha"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Jagannath_temple_Puri.jpg?width=1200"
+                        alt="Jagannath Temple"
+                    >
+
+                    <div class="era">
+                        ANCIENT HERITAGE
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        PURI, ODISHA
+                    </p>
+
+                    <h3>
+                        Jagannath Temple
+                    </h3>
+
+                    <p>
+                        One of India's most important sacred
+                        heritage landmarks, deeply connected with
+                        the cultural traditions of Odisha.
+                    </p>
+
+                    <a href="monuments/jagannath.html" class="learn-btn" onclick="collectStamp('Jagannath Temple')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 HAMPI
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="hampi vijayanagara karnataka"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Vittala_Temple,_Hampi.jpg?width=1200"
+                        alt="Hampi"
+                    >
+
+                    <div class="era">
+                        VIJAYANAGARA
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        HAMPI, KARNATAKA
+                    </p>
+
+                    <h3>
+                        Hampi
+                    </h3>
+
+                    <p>
+                        The spectacular ruins of the Vijayanagara
+                        Empire, filled with temples, markets and
+                        remarkable stone architecture.
+                    </p>
+
+                    <a href="hampi.html" class="learn-btn hampi-explore-btn" onclick="collectStamp('Hampi')">
+                    EXPLORE HAMPI →
+</a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 SANCHI STUPA
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="sanchi stupa madhya pradesh buddhist"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanchi_Stupa,_Sanchi.jpg?width=1200"
+                        alt="Sanchi Stupa"
+                    >
+
+                    <div class="era">
+                        MAURYAN PERIOD
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        SANCHI, MADHYA PRADESH
+                    </p>
+
+                    <h3>
+                        Sanchi Stupa
+                    </h3>
+
+                    <p>
+                        An ancient Buddhist monument known for its
+                        stupas, gateways and beautifully carved
+                        historical scenes.
+                    </p>
+
+                    <a href="monuments/sanchi.html" class="learn-btn" onclick="collectStamp('Sanchi Stupa')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 AJANTA CAVES
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="ajanta caves maharashtra buddhist"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ajanta_Caves_from_Maharashtra_state_of_India.jpg?width=1200"
+                        alt="Ajanta Caves"
+                    >
+
+                    <div class="era">
+                        ANCIENT INDIA
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        MAHARASHTRA
+                    </p>
+
+                    <h3>
+                        Ajanta Caves
+                    </h3>
+
+                    <p>
+                        Ancient rock-cut caves famous for their
+                        paintings, sculptures and Buddhist heritage.
+                    </p>
+
+                    <a href="monuments/ajanta.html" class="learn-btn" onclick="collectStamp('Ajanta Caves')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RED FORT
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="red fort delhi mughal"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Red_fort_delhi_india.jpg?width=1200"
+                        alt="Red Fort Delhi"
+                    >
+
+                    <div class="era">
+                        MUGHAL ERA
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        DELHI
+                    </p>
+
+                    <h3>
+                        Red Fort
+                    </h3>
+
+                    <p>
+                        A grand Mughal-era fort that stands as one
+                        of the most recognizable landmarks of Delhi.
+                    </p>
+
+                    <a href="monuments/red-fort.html" class="learn-btn" onclick="collectStamp('Red Fort')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 CHARMINAR
+            ================================================== -->
+
+            <article
+                class="monument-card"
+                data-name="charminar hyderabad telangana"
+            >
+
+                <div class="image-container">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Charminar_of_Hyderabad_Telangana.jpg?width=1200"
+                        alt="Charminar Hyderabad"
+                    >
+
+                    <div class="era">
+                        DECCAN HERITAGE
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <p class="location">
+                        HYDERABAD, TELANGANA
+                    </p>
+
+                    <h3>
+                        Charminar
+                    </h3>
+
+                    <p>
+                        Hyderabad's iconic four-minaret monument
+                        and one of the most recognizable structures
+                        of the Deccan.
+                    </p>
+
+                    <a href="monuments/charminar.html" class="learn-btn" onclick="collectStamp('Charminar')">
+                        LEARN ABOUT IT →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Show more button -->
+
+        <button class="more-btn" onclick="window.location.href='journey.html'">
+            TRAVEL TO MORE HERITAGE →
+            <span>→</span>
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         GAMES SECTION
+    ====================================================== -->
+
+    <section id="games" class="games-section">
+
+        <div class="games-background"></div>
+
+        <div class="games-content">
+
+            <p class="gold-label">
+                EXPERIENCE HISTORY
+            </p>
+
+            <h2>
+                History Is Better When You
+                <span>PLAY IT</span>
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Move through illustrated heritage landscapes,
+                build a thriving city, collect Memory Sparks,
+                and discover stories by playing—not by answering quizzes.
+            </p>
+
+            <button class="game-main-btn" onclick="openGames()">
+                🎮 EXPLORE HISTORICAL GAMES
+            </button>
+
+        </div>
+
+
+        <!-- Game preview cards -->
+
+        <div class="game-preview-grid">
+
+            <div class="game-preview playable-preview" onclick="window.location.href='arcade/index.html#builder'" role="link" tabindex="0" onkeydown="if(event.key === 'Enter') window.location.href='arcade/index.html#builder'">
+
+                <div class="game-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Build the Empire
+                </h3>
+
+                <p>
+                    Construct and manage an ancient Indian city.
+                </p>
+
+                <button class="journey-btn" onclick="event.stopPropagation(); window.location.href='arcade/index.html#builder'">
+                    BUILD A CITY →
+                </button>
+
+            </div>
+
+
+            <div class="game-preview journey-preview" onclick="window.location.href='journey.html'" role="link" tabindex="0" onkeydown="if(event.key === 'Enter') window.location.href='journey.html'">
+
+                <div class="game-icon">
+                    🗺️
+                </div>
+
+                <h3>
+                    Journey Through Time
+                </h3>
+
+                <p>
+                    Travel across different periods of Indian history.
+                </p>
+
+                <button class="journey-btn" onclick="event.stopPropagation(); window.location.href='journey.html'">
+                    BEGIN JOURNEY →
+                </button>
+
+            </div>
+
+
+            <div class="game-card heritage-card" onclick="window.location.href='arcade/index.html#trail'" role="link" tabindex="0" onkeydown="if(event.key === 'Enter') window.location.href='arcade/index.html#trail'">
+
+    <div class="game-icon">
+        🗺️
+    </div>
+
+    <h3>HERITAGE TRAIL</h3>
+
+    <p>
+        Run, jump, collect Memory Sparks and reach
+        monumental landscapes in a playable 2D adventure.
+    </p>
+
+    <button
+        class="quest-btn"
+        onclick="event.stopPropagation(); window.location.href='arcade/index.html#trail'">
+
+        PLAY 2D TRAIL →
+
+    </button>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MONUMENT VIDEO GALLERY
+    ====================================================== -->
+
+    <section id="watch" class="video-section">
+        <div class="section-heading">
+            <p class="gold-label">WATCH THE STORIES</p>
+            <h2>See Heritage <span>Come Alive</span></h2>
+            <div class="gold-line"></div>
+            <p>Short, hand-picked videos to begin exploring four remarkable places. Videos play inside the site.</p>
+        </div>
+
+        <div class="video-grid">
+            <button class="video-card" type="button" onclick="playMonumentVideo('Taj Mahal')"><span class="video-play">▶</span><span class="video-place">AGRA, UTTAR PRADESH</span><strong>Taj Mahal: a story of love</strong><small>Smithsonian Channel · 2 min</small></button>
+            <button class="video-card" type="button" onclick="playMonumentVideo('Konark Sun Temple')"><span class="video-play">▶</span><span class="video-place">KONARK, ODISHA</span><strong>Sun Temple: stone and sunlight</strong><small>Design learning documentary</small></button>
+            <button class="video-card" type="button" onclick="playMonumentVideo('Hampi')"><span class="video-play">▶</span><span class="video-place">HAMPI, KARNATAKA</span><strong>Hampi: UNESCO heritage site</strong><small>Virtual introduction</small></button>
+            <button class="video-card" type="button" onclick="playMonumentVideo('Ajanta Caves')"><span class="video-play">▶</span><span class="video-place">MAHARASHTRA</span><strong>Ajanta: art carved in rock</strong><small>History introduction</small></button>
+        </div>
+        <p class="media-credit">Video embeds remain hosted by their creators. Monument photography is sourced from Wikimedia Commons.</p>
+    </section>
+
+
+    <!-- =====================================================
+         WHY ECHOES OF BHARAT
+    ====================================================== -->
+
+    <section class="why-section">
+
+        <div class="section-heading">
+
+            <p class="gold-label">
+                OUR VISION
+            </p>
+
+            <h2>
+                Learn. Explore. Experience.
+            </h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Explore India's monuments and uncover
+                    the stories behind them.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Understand history through interactive
+                    information and visual experiences.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <h3>
+                    Play
+                </h3>
+
+                <p>
+                    Experience historical events through
+                    games and interactive challenges.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <h3>
+                    Preserve
+                </h3>
+
+                <p>
+                    Connect the younger generation with
+                    India's cultural heritage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer id="about">
+
+        <div class="footer-logo">
+
+            <span>☸</span>
+
+            <h2>
+                ECHOES OF BHARAT
+            </h2>
+
+            <p>
+                Explore the past. Experience the story.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#heritage">Heritage</a>
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Echoes of Bharat.
+            Built to celebrate India's heritage.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MONUMENT INFORMATION MODAL
+    ====================================================== -->
+
+    <div id="monumentModal" class="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close-modal"
+                onclick="closeMonument()"
+            >
+                ×
+            </button>
+
+            <p class="gold-label">
+                HERITAGE DISCOVERY
+            </p>
+
+            <h2 id="modalTitle">
+                Monument
+            </h2>
+
+            <p id="modalLocation" class="modal-location">
+                Location
+            </p>
+
+            <div class="modal-line"></div>
+
+            <p id="modalDescription">
+                Description
+            </p>
+
+            <div id="timeCompass" class="time-compass">
+                <p class="compass-label">✦ TIME COMPASS MISSION</p>
+                <p id="compassEra">A historical era awaits.</p>
+                <p id="compassMission">Discover this monument to reveal its mission.</p>
+            </div>
+
+            <!--
+                FUTURE WORK:
+
+                Later you can replace this button with a separate
+                monument details page.
+
+                Example:
+                window.location.href = "taj-mahal.html";
+            -->
+
+            <button
+                class="modal-learn-btn"
+                onclick="completeMission()"
+            >
+                COMPLETE MISSION &amp; COLLECT STAMP →
+            </button>
+
+        </div>
+
+    </div><!-- =====================================================
+     ECHOES OF BHARAT
+     HERITAGE QUEST
+===================================================== -->
+
+<div id="heritageQuest" class="quest-overlay">
+
+    <div class="quest-container">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <div class="quest-header">
+
+            <div>
+
+                <span class="quest-brand">
+                    ECHOES OF BHARAT
+                </span>
+
+                <h1>
+                    🧩 HERITAGE QUEST
+                </h1>
+
+            </div>
+
+            <button
+                class="close-quest"
+                onclick="closeHeritageQuest()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             START SCREEN
+        ================================================== -->
+
+        <section
+            id="questStart"
+            class="quest-screen">
+
+            <div class="quest-emblem">
+                🏛️
+            </div>
+
+            <div class="ancient-line"></div>
+
+            <div class="scroll-label">
+                THE LOST HERITAGE SCROLL
+            </div>
+
+            <h2>
+                BEGIN YOUR JOURNEY
+            </h2>
+
+            <p class="intro-text">
+
+                Twelve challenges stand between you and
+                the legendary Heritage Scroll.
+
+                <br><br>
+
+                Travel across India's monuments, architecture,
+                traditions and history.
+
+                <br><br>
+
+                Can you become a
+                <strong>Heritage Master?</strong>
+
+            </p>
+
+
+            <!-- LEVEL ROAD -->
+
+            <div class="quest-road">
+
+                <div class="road-level active-level">
+
+                    <div class="road-icon">
+                        🧭
+                    </div>
+
+                    <strong>
+                        LEVEL I
+                    </strong>
+
+                    <span>
+                        EXPLORER
+                    </span>
+
+                    <small>
+                        Puzzles 1–4
+                    </small>
+
+                </div>
+
+
+                <div class="road-line"></div>
+
+
+                <div class="road-level">
+
+                    <div class="road-icon">
+                        ⏳
+                    </div>
+
+                    <strong>
+                        LEVEL II
+                    </strong>
+
+                    <span>
+                        TIME TRAVELER
+                    </span>
+
+                    <small>
+                        Puzzles 5–8
+                    </small>
+
+                </div>
+
+
+                <div class="road-line"></div>
+
+
+                <div class="road-level">
+
+                    <div class="road-icon">
+                        👑
+                    </div>
+
+                    <strong>
+                        LEVEL III
+                    </strong>
+
+                    <span>
+                        HERITAGE MASTER
+                    </span>
+
+                    <small>
+                        Puzzles 9–12
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- GAME FEATURES -->
+
+            <div class="quest-features">
+
+                <div>
+                    <span>❤️</span>
+                    <strong>3</strong>
+                    <small>Lives</small>
+                </div>
+
+                <div>
+                    <span>⏱️</span>
+                    <strong>20</strong>
+                    <small>Seconds</small>
+                </div>
+
+                <div>
+                    <span>🔥</span>
+                    <strong>COMBO</strong>
+                    <small>Bonus</small>
+                </div>
+
+                <div>
+                    <span>🏆</span>
+                    <strong>BADGES</strong>
+                    <small>Unlock</small>
+                </div>
+
+            </div>
+
+
+            <button
+                class="start-btn"
+                onclick="startQuest()">
+
+                BEGIN THE QUEST
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GAME SCREEN
+        ================================================== -->
+
+        <section
+            id="questGame"
+            class="quest-screen hidden">
+
+
+            <!-- TOP STATUS -->
+
+            <div class="game-status">
+
+                <div class="status-box">
+
+                    <small>
+                        LEVEL
+                    </small>
+
+                    <strong id="levelDisplay">
+                        I
+                    </strong>
+
+                </div>
+
+
+                <div class="status-box">
+
+                    <small>
+                        PUZZLE
+                    </small>
+
+                    <strong id="puzzleNumber">
+                        1 / 12
+                    </strong>
+
+                </div>
+
+
+                <div class="status-box">
+
+                    <small>
+                        SCORE
+                    </small>
+
+                    <strong id="score">
+                        ⭐ 0
+                    </strong>
+
+                </div>
+
+
+                <div class="status-box">
+
+                    <small>
+                        LIVES
+                    </small>
+
+                    <strong id="lives">
+                        ❤️❤️❤️
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="quest-progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <!-- TIMER -->
+
+            <div class="timer-wrapper">
+
+                <div class="timer-ring">
+
+                    <span>
+                        TIME
+                    </span>
+
+                    <strong id="timer">
+                        20
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="quest-tools">
+                <button id="hintBtn" class="quest-tool-btn" onclick="useHint()">💡 HINT <span id="hintCost">-40</span></button>
+                <button id="soundBtn" class="quest-tool-btn" onclick="toggleQuestSound()">🔊 SOUND ON</button>
+            </div>
+
+            <div id="hintBox" class="hint-box hidden"></div>
+
+
+            <!-- PUZZLE -->
+
+            <div class="puzzle-card">
+
+
+                <div
+                    id="puzzleCategory"
+                    class="puzzle-category">
+
+                    MONUMENT MYSTERY
+
+                </div>
+
+
+                <div
+                    id="puzzleLevel"
+                    class="puzzle-level">
+
+                    LEVEL I • EXPLORER
+
+                </div>
+
+
+                <h2 id="puzzleQuestion">
+
+                    Question
+
+                </h2>
+
+
+                <div
+                    id="puzzleContent"
+                    class="puzzle-content">
+
+                </div>
+
+            </div>
+
+
+            <!-- COMBO -->
+
+            <div
+                id="comboDisplay"
+                class="combo-display">
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div
+                id="feedback"
+                class="quest-feedback">
+
+            </div>
+
+
+            <!-- NEXT -->
+
+            <button
+                id="nextBtn"
+                class="next-btn hidden"
+                onclick="nextPuzzle()">
+
+                NEXT CHALLENGE →
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <section
+            id="questResult"
+            class="quest-screen hidden">
+
+            <div
+                id="resultIcon"
+                class="result-icon">
+
+                🏆
+
+            </div>
+
+            <div class="ancient-line"></div>
+
+
+            <h2 id="resultTitle">
+                QUEST COMPLETE!
+            </h2>
+
+
+            <p id="resultMessage"></p>
+
+
+            <!-- SCORE -->
+
+            <div class="score-ring">
+
+                <span>
+                    FINAL SCORE
+                </span>
+
+                <strong id="finalScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="result-stats">
+
+                <div>
+
+                    <strong id="correctCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Correct
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="wrongCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Wrong
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="bestScore">
+                        0
+                    </strong>
+
+                    <span>
+                        Best Score
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BADGE -->
+
+            <div
+                id="badge"
+                class="badge">
+
+                🏅 HERITAGE EXPLORER
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    class="start-btn"
+                    onclick="startQuest()">
+
+                    PLAY AGAIN
+
+                </button>
+
+
+                <button
+                    class="home-btn"
+                    onclick="closeHeritageQuest()">
+
+                    RETURN TO GAMES
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MONUMENT VIDEO PLAYER
+===================================================== -->
+
+<div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-labelledby="videoTitle" aria-hidden="true">
+    <div class="video-modal-box">
+        <button class="video-close" type="button" onclick="closeMonumentVideo()" aria-label="Close video">×</button>
+        <p id="videoEyebrow" class="gold-label">HERITAGE VIDEO</p>
+        <h2 id="videoTitle">Watch a monument story</h2>
+        <div class="video-frame"><iframe id="monumentVideo" title="Heritage monument video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p id="videoDescription">A short introduction to this place and its living history.</p>
+        <a id="videoExternalLink" class="video-external-link" href="https://www.youtube.com" target="_blank" rel="noopener">OPEN ON YOUTUBE ↗</a>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     END HERITAGE QUEST
+===================================================== -->
+
+
+    <!-- JavaScript -->
+    <script src="route-map.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
